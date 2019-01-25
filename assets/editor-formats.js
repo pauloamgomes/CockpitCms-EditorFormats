@@ -8,8 +8,8 @@ App.$(document).on("init-wysiwyg-editor", function(e, editor) {
   }
 
   App.callmodule("editorformats:getEditorFormat", [
-    editor.settings.format,
-  ]).then(function(data) {
+    editor.settings.format
+  ], "access").then(function(data) {
     if (data && data.result) {
       options = data.result;
       options.branding = false;

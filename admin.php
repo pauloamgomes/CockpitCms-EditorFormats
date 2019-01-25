@@ -8,6 +8,7 @@
 // Module ACL definitions.
 $this("acl")->addResource('editorformats', [
   'manage',
+  'access'
 ]);
 
 /*
