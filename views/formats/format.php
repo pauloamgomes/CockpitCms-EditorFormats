@@ -126,7 +126,7 @@
 
         this.format = {{ json_encode($format) }};
 
-        this.toolbar = ["formatselect", "undo", "redo", "pastetext", "selectall", "bold", "italic", "subscript", "superscript", "strikethrough", "underline", "forecolor", "backcolor", "alignleft", "aligncenter", "alignright", "link", "unlink", "anchor", "numlist", "bullist", "blockquote", "indent", "outdent", "image", "media", "code", "removeformat", "fullscreen"];
+        this.toolbar = ["formatselect", "undo", "redo", "pastetext", "selectall", "bold", "italic", "subscript", "superscript", "strikethrough", "underline", "forecolor", "backcolor", "alignleft", "aligncenter", "alignright", "link", "unlink", "anchor", "numlist", "bullist", "blockquote", "indent", "outdent", "image", "media", "code", "removeformat", "fullscreen", "ltr", "rtl"];
 
         this.on('update', function(){
             if (this.format._id) {
