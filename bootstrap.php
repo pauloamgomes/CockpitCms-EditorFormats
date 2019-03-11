@@ -35,8 +35,8 @@ $this->module('editorformats')->extend([
         'code' => TRUE,
         'fullscreen' => TRUE,
         'media' => FALSE,
-        'mediapath' => FALSE,
-        'assetpath' => FALSE,
+        'cpmediapath' => FALSE, // link image (finder)
+        'cpassetpath' => FALSE, // link image (assets)
         'table' => TRUE,
         'contextmenu' => FALSE,
         'paste' => FALSE,
@@ -55,6 +55,7 @@ $this->module('editorformats')->extend([
         "colorpicker" => FALSE,
         "charmap" => FALSE,
         "autoresize" => FALSE,
+        "cpcollectionlink" => FALSE, // collection-link
       ],
       'height' => '400',
     ];
