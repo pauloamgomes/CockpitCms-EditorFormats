@@ -24,7 +24,7 @@ $this->module('editorformats')->extend([
         'table' => TRUE,
         'tools' => TRUE,
       ],
-      'toolbar' => 'bold italic subscript superscript strikethrough underline | link unlink | alignleft aligncenter alignright | numlist bullist | removeformat | code fullscreen',
+      'toolbar' => 'bold italic subscript superscript strikethrough underline | link unlink | alignleft aligncenter alignright | numlist bullist | removeformat | code fullscreen | ltr rtl',
       'plugins' => [
         'link' => TRUE,
         'image' => FALSE,
@@ -54,7 +54,9 @@ $this->module('editorformats')->extend([
         "emoticons" => FALSE,
         "colorpicker" => FALSE,
         "charmap" => FALSE,
+	      "directionality" => TRUE,
         "autoresize" => FALSE,
+        "directionality" => TRUE,
         "cpcollectionlink" => FALSE, // collection-link
       ],
       'height' => '400',
