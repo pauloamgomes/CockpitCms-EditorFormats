@@ -39,7 +39,23 @@ When enabled, it will be available to the admin with all features.
 
 ### Permissions
 
-There is only one permission (manage) that can be used to manage the formats.
+There are two permissions
+ - manage - that can be used to manage the formats
+ - access - is used to use the editor, if you are using the editor as non admin user you need to add that permission
+
+example of configuration:
+
+```yaml
+groups:
+  manager:
+    editorformats:
+      manage: true
+      access: true
+  editor:
+    editorformats:
+      access: true
+```
+
 
 ## Usage
 
