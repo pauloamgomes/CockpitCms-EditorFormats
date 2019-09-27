@@ -25,6 +25,16 @@ $this->module('editorformats')->extend([
         'tools' => TRUE,
       ],
       'toolbar' => 'searchreplace | bold italic subscript superscript strikethrough underline | link unlink | alignleft aligncenter alignright | numlist bullist | removeformat | code fullscreen',
+      'blocks' => [
+        'p' => TRUE,
+        'h1' => TRUE,
+        'h2' => TRUE,
+        'h3' => TRUE,
+        'h4' => TRUE,
+        'h5' => TRUE,
+        'h6' => TRUE,
+        'pre' => TRUE,
+      ],
       'plugins' => [
         'link' => TRUE,
         'anchor' => FALSE,
@@ -195,6 +205,24 @@ $this->module('editorformats')->extend([
     $options['menubar'] = trim(implode(' ', array_keys(array_filter($format['menubar']))));
     $options['plugins'] = array_keys(array_filter($format['plugins']));
     $options['toolbar'] = $format['toolbar'];
+    $blocks = [
+      'p' => 'Paragraph=p',
+      'h1' => 'Header 1=h1',
+      'h2' => 'Header 2=h2',
+      'h3' => 'Header 3=h3',
+      'h4' => 'Header 4=h4',
+      'h5' => 'Header 5=h5',
+      'h6' => 'Header 6=h6',
+      'pre' => 'Pre=pre',
+    ];
+    if (!empty($format['blocks']) && is_array($format['blocks'])) {
+      foreach ($format['blocks'] as $format => $status) {
+        if (!$status) {
+          unset($blocks[$format]);
+        }
+      }
+    }
+    $options['block_formats'] = implode("; ", $blocks);
 
     return $options;
   },

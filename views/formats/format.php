@@ -71,9 +71,9 @@
                 </div>
                 <div class="uk-panel uk-panel-box uk-panel-card">
                     <div class="uk-grid uk-grid-small">
-                        <p each="{ state, name in format.menubar }">
+                        <div class="uk-margin-top" each="{ state, name in format.menubar }">
                             <field-boolean bind="format.menubar.{name}" title="{name}" label="{name}"></field-boolean>
-                        </p>
+                        </div>
                     </div>
                     <p class="uk-text-small uk-text-muted"> @lang('If all options are disabled no menu will be displayed at all.') </p>
                 </div>
@@ -97,11 +97,30 @@
 
             <div class="uk-form-row">
                 <div class="uk-margin">
+                    <label class="uk-text-small">@lang('Block Formats')</label>
+                </div>
+                <div class="uk-panel uk-panel-box uk-panel-card">
+                    <div class="uk-grid uk-grid-small">
+                        <field-boolean class="uk-margin-top" bind="format.blocks.p" title="{blocks.p}" label="{blocks.p}"></field-boolean>
+                        <field-boolean class="uk-margin-top" bind="format.blocks.h1" title="{blocks.h1}" label="{blocks.h1}"></field-boolean>
+                        <field-boolean class="uk-margin-top" bind="format.blocks.h2" title="{blocks.h2}" label="{blocks.h2}"></field-boolean>
+                        <field-boolean class="uk-margin-top" bind="format.blocks.h3" title="{blocks.h3}" label="{blocks.h3}"></field-boolean>
+                        <field-boolean class="uk-margin-top" bind="format.blocks.h4" title="{blocks.h4}" label="{blocks.h4}"></field-boolean>
+                        <field-boolean class="uk-margin-top" bind="format.blocks.h5" title="{blocks.h5}" label="{blocks.h5}"></field-boolean>
+                        <field-boolean class="uk-margin-top" bind="format.blocks.h6" title="{blocks.h6}" label="{blocks.h6}"></field-boolean>
+                        <field-boolean class="uk-margin-top" bind="format.blocks.pre" title="{blocks.pre}" label="{blocks.pre}"></field-boolean>
+                    </div>
+                    <p class="uk-text-small uk-text-muted"> @lang('It only applies when "format menu" or "formatselect toolbar button" are enabled.') </p>
+                </div>
+            </div>
+
+            <div class="uk-form-row">
+                <div class="uk-margin">
                     <label class="uk-text-small">@lang('Plugins')</label>
                 </div>
                 <div class="uk-panel uk-panel-box uk-panel-card">
                     <div class="uk-grid uk-grid-small">
-                        <div class="uk-margin" each="{ state, name in format.plugins }">
+                        <div class="uk-margin-top" each="{ state, name in format.plugins }">
                             <field-boolean bind="format.plugins.{name}" title="{name}" label="{name}"></field-boolean>
                         </div>
                     </div>
@@ -127,6 +146,17 @@
         this.format = {{ json_encode($format) }};
 
         this.toolbar = ["formatselect", "undo", "redo", "pastetext", "selectall", "bold", "italic", "subscript", "superscript", "strikethrough", "underline", "forecolor", "backcolor", "alignleft", "aligncenter", "alignright", "anchor", "link", "unlink", "anchor", "numlist", "bullist", "blockquote", "indent", "outdent", "image", "media", "code", "removeformat", "fullscreen", "ltr", "rtl", "toc", "tocupdate", "searchreplace", "preview"];
+
+        this.blocks = {
+            p: "Paragraph",
+            h1: "Header 1",
+            h2: "Header 2",
+            h3: "Header 3",
+            h4: "Header 4",
+            h5: "Header 5",
+            h6: "Header 6",
+            pre: "Pre"
+        };
 
         this.on('update', function(){
             if (this.format._id) {
