@@ -47,9 +47,9 @@
                         </div>
 
                         <div>
-                            <label class="uk-text-small">@lang('Set Relative Urls')</label>
+                            <label class="uk-text-small">@lang('Force Absolute Urls')</label>
                             <p>
-                                <field-boolean bind="format.relative_urls" title="@lang('Relative Urls')" label="@lang('Relative Urls')"></field-boolean>
+                                <field-boolean bind="format.absolute_urls" title="@lang('Absolute Urls')" label="@lang('Absolute Urls')"></field-boolean>
                             </p>
                         </div>
 

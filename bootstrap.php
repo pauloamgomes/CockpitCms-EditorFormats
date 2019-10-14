@@ -14,7 +14,7 @@ $this->module('editorformats')->extend([
   'defaultFormat' => function() {
     return [
       'resize' => TRUE,
-      'relative_urls' => FALSE,
+      'absolute_urls' => FALSE,
       'branding' => FALSE,
       'menubar' => [
         'edit' => TRUE,
@@ -200,7 +200,7 @@ $this->module('editorformats')->extend([
     $options = [];
     $options['branding'] = (bool) $format['branding'];
     $options['resize'] = (bool) $format['resize'];
-    $options['relative_urls'] = (bool) $format['relative_urls'];
+    $options['absolute_urls'] = (bool) $format['absolute_urls'];
     $options['height'] = (int) $format['height'];
     $options['menubar'] = trim(implode(' ', array_keys(array_filter($format['menubar']))));
     $options['plugins'] = array_keys(array_filter($format['plugins']));

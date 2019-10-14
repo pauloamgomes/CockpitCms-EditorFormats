@@ -24,6 +24,11 @@ App.$(document).on("init-wysiwyg-editor", function(e, editor) {
       options.language = lang;
       options.language_url = lang == 'en' ? '' : App.route('/config/cockpit/i18n/tinymce/'+lang+'.js');
 
+      options.relative_urls = false;
+      if (options.absolute_urls) {
+        options.remove_script_host = false;
+      }
+
       tinymce.EditorManager.execCommand("mceRemoveEditor", false, editor.id);
       new tinymce.Editor(editor.id, options, tinymce.EditorManager).render();
     }
