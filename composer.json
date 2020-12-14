@@ -1,0 +1,23 @@
+{
+    "name": "pauloamgomes/cockpit-editorformats",
+    "type": "cockpit-module",
+    "description": "Cockpit CMS addon that extends core functionality by introducing the possibility to define editor format modes to the WYSIWYG field (based on tinymce editor). ",
+    "keywords": ["cockpit", "cockpit addon", "wysiwyg", "tinymce"],
+    "homepage": "https://www.pauloamgomes.net/project/cockpiteditorformats/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paulo Gomes",
+            "homepage": "https://www.pauloamgomes.net"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.9"
+    },
+    "config": {
+        "vendor-dir": "lib/vendor"
+    },
+    "extra": {
+        "installer-name": "EditorFormats"
+    }
+}
